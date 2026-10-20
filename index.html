@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ular Tangga Arab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="atas">
+    <h1>Ular Tangga Arab</h1>
+    <button id="btn-materi" class="sekunder" type="button">Materi</button>
+  </header>
+
+  <main>
+
+    <!-- LAYAR 1: pengaturan tim -->
+    <section id="layar-awal">
+      <h2>Siap bermain?</h2>
+      <p class="intro">Lempar dadu, jawab soal mufradat, nahwu, dan sharaf. Jawab benar di kaki tangga untuk naik, dan jawab benar di kepala ular supaya selamat. Sampai petak 36 lebih dulu untuk menang.</p>
+      <p class="label">Jumlah tim</p>
+      <div id="pilih-jumlah" class="jumlah"></div>
+      <div id="isi-nama" class="nama-tim"></div>
+      <button id="btn-mulai" class="utama" type="button">Mulai bermain</button>
+    </section>
+
+    <!-- LAYAR 2: papan permainan -->
+    <section id="layar-main" hidden>
+      <div class="info">
+        <p id="giliran" class="giliran"></p>
+        <div class="kontrol">
+          <span id="dadu" class="dadu">🎲</span>
+          <button id="btn-dadu" class="utama" type="button">Lempar dadu</button>
+        </div>
+        <p id="pesan" class="pesan" aria-live="polite"></p>
+      </div>
+      <div class="papan-bungkus">
+        <div id="papan"></div>
+        <svg id="garis" viewBox="0 0 600 600" aria-hidden="true"></svg>
+      </div>
+      <ul class="legenda">
+        <li><i class="kotak mufradat"></i>Mufradat</li>
+        <li><i class="kotak nahwu"></i>Nahwu</li>
+        <li><i class="kotak sharaf"></i>Sharaf</li>
+        <li>🪜 tangga</li>
+        <li>🐍 ular</li>
+      </ul>
+      <ul id="skor-tim" class="skor"></ul>
+    </section>
+
+    <!-- LAYAR 3: hasil dan rapor -->
+    <section id="layar-akhir" hidden>
+      <h2 id="juara"></h2>
+      <p class="intro">Rapor kekuatan tiap tim berdasarkan jawaban selama permainan:</p>
+      <div id="rapor"></div>
+      <button id="btn-ulang" class="utama" type="button">Main lagi</button>
+    </section>
+
+  </main>
+
+  <!-- Jendela soal -->
+  <dialog id="dlg-soal">
+    <p id="soal-info" class="soal-info"></p>
+    <p id="soal-arab" class="arab" lang="ar" dir="rtl"></p>
+    <h3 id="soal-tanya"></h3>
+    <div id="soal-pilihan" class="pilihan"></div>
+    <p id="soal-hasil" class="hasil" aria-live="polite"></p>
+    <button id="btn-lanjut" class="utama" type="button" hidden>Lanjut</button>
+  </dialog>
+
+  <!-- Jendela materi -->
+  <dialog id="dlg-materi">
+    <div id="isi-materi"></div>
+    <button id="btn-tutup-materi" class="utama" type="button">Tutup</button>
+  </dialog>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
